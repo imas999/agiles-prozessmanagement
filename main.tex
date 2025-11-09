@@ -1,0 +1,83 @@
+\documentclass[11pt]{article}
+
+%%| INCLUDE PACKAGES HERE |%%
+\usepackage[utf8]{inputenc}
+\usepackage[paper=a4paper,left=25mm,right=25mm,top=25mm,bottom=25mm]{geometry}
+\usepackage[english, ngerman]{babel}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[autostyle=true,german=quotes]{csquotes}
+\usepackage[backend=biber, style=ieee]{biblatex}
+\usepackage{hyperref}
+\usepackage{setspace}
+% \usepackage{microtype} % disabled: causes "Unable to apply patch `footnote'" with current package order
+\usepackage{wrapfig}
+\usepackage{hyperref} 
+\usepackage[figure]{hypcap}
+
+%%| SET PACKAGE PARAMETERS HERE |%%
+\hypersetup{                                                                        
+    colorlinks,
+    citecolor   = black,
+    filecolor   = black,
+    linkcolor   = black,
+    urlcolor    = black,
+    pdftitle    = {Labor ABCDEFGHIJ},                                               % SET FILE PARAMETERS HERE (SHOWN IN PDF PROPERTIES)
+    pdfsubject  = {Einführung in ABCDEFGHIJ},                                       % ...
+    pdfauthor   = {Max Mustermann},
+    pdfkeywords = {XY-Labor, Laborbericht},                                    
+    pdfcreator  = {pdflatex},           
+    pdfproducer = {LaTeX with hyperref}
+}
+\setstretch{1.25}                                                                   % SET GENERAL LINE SPACING HERE
+
+%%| SET OTHER PARAMETERS HERE |%%
+\addbibresource{Document/Bibliography/ref.bib}
+
+%%| TITLE PAGE |%%
+\begin{document}
+\begin{titlepage}
+    \begin{center}
+        \includegraphics[width=0.55\textwidth]{images/HsKa_new.png}\\[16ex]
+        \huge{\textbf{Mobilfunksysteme}\\Generationsvergleich}\\[8ex]
+        \large{\textbf{wissenschaftliches Paper}}\\[1ex]
+        \LARGE{\textbf{Agiles Prozsessmanagement}}\\[14ex]
+        \normalsize{}
+        \begin{tabular}{lll}
+            Studenten:          & \quad Sami El Aidi                                              & 86770 \\[2ex] 
+            Universität:        & \quad Hochschule Karlsruhe – Technik und Wirtschaft   &       \\[2ex]
+            Studiengang:        & \quad Elektro- und Informationstechnik                &       \\[2ex]
+            Studienvertiefung:  & \quad Informationstechnik                         &       \\[2ex]
+            Semester:           & \quad Wintersemester 25/26                        &       \\[2ex]
+            Dozent:             & \quad Dr.- Ing. Monika Klippert                        &       \\[2ex]
+                                & \quad M. Sc. Annika Bastian                              &       \\[2ex]   
+            Bearbeitet am:      & \quad \today                                 &       \\[2ex]
+        \end{tabular}
+    \end{center}
+\end{titlepage}
+\newpage
+
+%%| TABLE OF CONTENTS |%%
+\pagenumbering{gobble}    
+\tableofcontents
+\newpage
+\pagenumbering{arabic}
+
+%%| INCLUDE CHAPTERS HERE |%%
+\input{01_einführung.tex}
+\input{02_technik.tex}
+\input{03_forschungsmethodik.tex}
+\input{04_Ergebnisse.tex}
+\input{05_Diskussion.tex}
+\input{06_zusammenfassung.tex}
+
+%%| BIBLIOGRAPHY |%%                 
+\newpage                                          
+\printbibliography[heading= bibintoc, title={Literaturverzeichnis}]
+\listoffigures
+\addcontentsline{toc}{section}{Abbildungsverzeichnis}
+\listoftables
+\addcontentsline{toc}{section}{Tabellenverzeichnis}
+
+\end{document}
