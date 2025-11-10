@@ -1,6 +1,22 @@
 \section{Grundlagen}
+Um die technischen Unterschiede der verschiedenen Mobilfunksysteme zu verstehen, ist es wichtig, einige grundlegende Konzepte der Nachrichtentechnik zu kennen. 
+Speziell sind die folgenden Konzepte relevant: 
+\begin{itemize}
+    \item \textbf{Fourier-Analyse und Spektrum}: Mathematisches Werkzeug zur Zerlegung von Signalen in ihre Frequenzanteile.
+    \item \textbf{Funkbänder}: Vordefinierte Frequenzbereiche, die von Mobilfunksystemen genutzt werden.
+    \item \textbf{Modulation}: Vorgang, bei dem Informationen in eine Wellenform zur Übertragung codiert werden.
+    \item \textbf{Zellularkonzept}: Struktur des Mobilfunknetzes zur effizienten Nutzung von Frequenzen. 
+\end{itemize}
 
-\subsection{Fourier-Transformation und Spektrum}
+\subsection{Fourier-Analyse und Spektrum}
+Um zunächst zu verstehen, warum die Fourier-Analyse beziehugnsweise die Fourier-Transformation und das dazugehörige Spektrum wichtig für die Signalübertragung ist, muss zunächst geklärt werden, was mit einem komplexen zeitdiskreten Signal gemeint ist.
+Bei einem komplexen Signal handelt es sich um ein Signal, welches sowohl einen Realteil als auch einen Imaginärteil besitzt:
+\begin{equation}
+    s(t) = I(t) + j \cdot Q(t)
+\end{equation}
+Hierbei bezeichnet $\Re{s(t)} = I(t)$ den Realteil und $\Im{s(t)} = Q(t)$ den Imaginärteil des Signals. \\
+Wenn nun dieses Signal zeitdiskret ist, bedeutet dies, dass es nur zu konkreten Zeitpunkten definiert ist, also in der Regel, ein Signal, welches durch Abtastung eines kontinuierlichen Signals entsteht.\\
+
 
 \subsection{Funkbänder}
 
