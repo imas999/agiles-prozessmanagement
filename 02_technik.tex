@@ -1,12 +1,12 @@
 \section{Grundlagen}
-Um die technischen Unterschiede der verschiedenen Mobilfunksysteme zu verstehen, ist es wichtig, einige grundlegende Konzepte der Nachrichtentechnik zu kennen. 
-Speziell sind die folgenden Konzepte relevant: 
-\begin{itemize}
-    \item \textbf{Fourier-Analyse und Spektrum}: Mathematisches Werkzeug zur Zerlegung von Signalen in ihre Frequenzanteile.
-    \item \textbf{Funkbänder}: Vordefinierte Frequenzbereiche, die von Mobilfunksystemen genutzt werden.
-    \item \textbf{Modulation}: Vorgang, bei dem Informationen in eine Wellenform zur Übertragung codiert werden.
-    \item \textbf{Zellularkonzept}: Struktur des Mobilfunknetzes zur effizienten Nutzung von Frequenzen. 
-\end{itemize}
+%Um die technischen Unterschiede der verschiedenen Mobilfunksysteme zu verstehen, ist es wichtig, einige grundlegende Konzepte der Nachrichtentechnik zu kennen. 
+%Speziell sind die folgenden Konzepte relevant: 
+%\begin{itemize}
+%    \item \textbf{Fourier-Analyse und Spektrum}: Mathematisches Werkzeug zur Zerlegung von Signalen in ihre Frequenzanteile.
+%    \item \textbf{Funkbänder}: Vordefinierte Frequenzbereiche, die von Mobilfunksystemen genutzt werden.
+%    \item \textbf{Modulation}: Vorgang, bei dem Informationen in eine Wellenform zur Übertragung codiert werden.
+%    \item \textbf{Zellularkonzept}: Struktur des Mobilfunknetzes zur effizienten Nutzung von Frequenzen. 
+%\end{itemize}
 
 \subsection{Fourier-Analyse und Spektrum}
 Um zunächst zu verstehen, warum die Fourier-Analyse beziehugnsweise die Fourier-Transformation und das dazugehörige Spektrum wichtig für die Signalübertragung ist, muss zunächst geklärt werden, was mit einem komplexen zeitdiskreten Signal gemeint ist.
@@ -14,11 +14,21 @@ Bei einem komplexen Signal handelt es sich um ein Signal, welches sowohl einen R
 \begin{equation}
     s(t) = I(t) + j \cdot Q(t)
 \end{equation}
-Hierbei bezeichnet $\Re{s(t)} = I(t)$ den Realteil und $\Im{s(t)} = Q(t)$ den Imaginärteil des Signals. \\
+Hierbei bezeichnet der Realteil $\Re{s(t)} = I(t)$ den In-Phase-Anteil und der Imaginärteil $\Im{s(t)} = Q(t)$ den Quadratur-Anteil des Signals. 
 Wenn nun dieses Signal zeitdiskret ist, bedeutet dies, dass es nur zu konkreten Zeitpunkten definiert ist, also in der Regel, ein Signal, welches durch Abtastung eines kontinuierlichen Signals entsteht.\\
+Relevant für die Signalübertragung ist nun die Tatsache, dass komplexe zeitdiskrete Signale durch die Fourier-Transformation in ihre Frequenzanteile zerlegt werden können. Dadurch ist es möglich, die Modulation einfacher durchzuführen 
+und die Eigenschaften wie die Bandbreite und die Frequenznutzung zu analysieren. 
 
+\subsubsection{Diskrete Fourier-Transformation (DFT)}
+Das Problem der kontinuierlichen Fourier-Transformation ist, dass diese in der Theorie sich auf einen unedlich langen Zeitraum bezieht. Da allerdings in der Realität bei der Signalübertragung keine unedlichen Signale existieren,
+muss eine diskrete Variante der Fourier-Transformation definiert werden:
+\begin{equation}
+    S[k] = \sum_{n=0}^{N-1} s[n] \cdot e^{-j \frac{2 \pi}{N} k n} \quad \text{für } k = 0, 1, \ldots, N-1   
+\end{equation}
 
 \subsection{Funkbänder}
+
+
 
 \subsection{Modulation}
 
