@@ -1,5 +1,8 @@
 \section{Grundlagen}
-%Um die technischen Unterschiede der verschiedenen Mobilfunksysteme zu verstehen, ist es wichtig, einige grundlegende Konzepte der Nachrichtentechnik zu kennen. 
+Um die technischen Unterschiede der verschiedenen Mobilfunksysteme zu verstehen, ist es wichtig, einige grundlegende Konzepte der Nachrichtentechnik zu kennen. 
+Dazu zählt das wichtigste mathematische Werkzeug zur Analyse von Signalen, die Fourier-Transformation. Hierbei geht es darum, die Frequenzanteile einzelner Signale zu Analysieren um zum Beispiel die Bandbreite zu bestimmen. 
+Relevant wird dies vor allem bei der Nutzung von Funkbändern, da Unternehmen nur begrenzte Frequenzbereiche zur Verfügung haben. Auch bei der Modulation von Signalen ist die Fourier-Transformation hilfreich,
+da hier Informationen in Wellenformen codiert werden.
 %Speziell sind die folgenden Konzepte relevant: 
 %\begin{itemize}
 %    \item \textbf{Fourier-Analyse und Spektrum}: Mathematisches Werkzeug zur Zerlegung von Signalen in ihre Frequenzanteile.
@@ -17,7 +20,7 @@ Bei einem komplexen Signal handelt es sich um ein Signal, welches sowohl einen R
 Hierbei bezeichnet der Realteil $\Re{s(t)} = I(t)$ den In-Phase-Anteil und der Imaginärteil $\Im{s(t)} = Q(t)$ den Quadratur-Anteil des Signals. 
 Wenn nun dieses Signal zeitdiskret ist, bedeutet dies, dass es nur zu konkreten Zeitpunkten definiert ist, also in der Regel, ein Signal, welches durch Abtastung eines kontinuierlichen Signals entsteht.\\
 Relevant für die Signalübertragung ist nun die Tatsache, dass komplexe zeitdiskrete Signale durch die Fourier-Transformation in ihre Frequenzanteile zerlegt werden können. Dadurch ist es möglich, die Modulation einfacher durchzuführen 
-und die Eigenschaften wie die Bandbreite und die Frequenznutzung zu analysieren. 
+und die Eigenschaften wie die Bandbreite und die Frequenznutzung zu analysieren.
 
 \subsubsection{Diskrete Fourier-Transformation (DFT)}
 Das Problem der kontinuierlichen Fourier-Transformation ist, dass diese in der Theorie sich auf einen unedlich langen Zeitraum bezieht. Da allerdings in der Realität bei der Signalübertragung keine unedlichen Signale existieren,
@@ -26,10 +29,34 @@ muss eine diskrete Variante der Fourier-Transformation definiert werden:
     S[k] = \sum_{n=0}^{N-1} s[n] \cdot e^{-j \frac{2 \pi}{N} k n} \quad \text{für } k = 0, 1, \ldots, N-1   
 \end{equation}
 
+\subsubsection{Beispiel: Diskrete Fourier-Transformation eines Cosinuses}
+Um das abstrakte Konzept der Diskreten Fourier-Transformation besser zu verstehen, wird im folgenden ein einfaches grafisches Beispiel gezeigt.
+Anhand einer Cosinusfunktion mit einer Frequenz von 10kHz ist der nutzen der DFT zur Analyse der Frequenzanteile dargestellt:
+\begin{equation}
+  s(t) = \cos(2 \cdot \pi \cdot 10.000 \cdot t) \\ \laplace S(f) = \frac{1}{2} \left[ \delta(f - 10.000) + \delta(f + 10.000) \right] 
+\end{equation}
+Grafisch dargestellt sieht dies wie folgt aus:
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\textwidth]{images/cosinus_10khz.png}
+    \caption{Diskrete Fourier-Transformation eines 10kHz Cosinussignals}
+    \label{fig:dft_sinus}
+\end{figure}
+\\ In der Abbildung \ref{fig:dft_sinus} ist im oberen Teil das Cosinussignal im Zeitbereich dargestellt und im unteren Teil das dazugehörige Spektrum. 
+Relevant ist, dass das Spektrum zwei Peaks bei $\pm 10kHz$ aufweist, genau die Frequenz des ursprünglichen Cosinussignals.
+
 \subsection{Funkbänder}
+\begin{wrapfigure}{h!}{0.5\textwidth}
+  \begin{center}
+    \includegraphics[width=0.48\textwidth]{images/frequenzpolitikgrafik.jpg}
+  \end{center}
+  \caption{Frequenzplan Deutschland Stand 2022 \cite{frequenznutzung}}
+  \label{fig:frequenzplan}
+\end{wrapfigure}
+Der Mobilfunk in Deutschland nutzt verschiedene Frequenzbereiche, die sogenannten Funkbänder.
 
 
 
 \subsection{Modulation}
 
-\subsection{Zellularkonzept}
+%\subsection{Zellularkonzept}
