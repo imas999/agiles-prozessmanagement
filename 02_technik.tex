@@ -45,18 +45,35 @@ Grafisch dargestellt sieht dies wie folgt aus:
 \\ In der Abbildung \ref{fig:dft_sinus} ist im oberen Teil das Cosinussignal im Zeitbereich dargestellt und im unteren Teil das dazugehörige Spektrum. 
 Relevant ist, dass das Spektrum zwei Peaks bei $\pm 10kHz$ aufweist, genau die Frequenz des ursprünglichen Cosinussignals.
 
-\subsection{Funkbänder}
-\begin{wrapfigure}{h!}{0.5\textwidth}
-  \begin{center}
-    \includegraphics[width=0.48\textwidth]{images/frequenzpolitikgrafik.jpg}
-  \end{center}
-  \caption{Frequenzplan Deutschland Stand 2022 \cite{frequenznutzung}}
-  \label{fig:frequenzplan}
-\end{wrapfigure}
-Der Mobilfunk in Deutschland nutzt verschiedene Frequenzbereiche, die sogenannten Funkbänder.
-
-
+%\subsection{Funkbänder}
+%\begin{wrapfigure}{h!}{0.5\textwidth}
+%  \begin{center}
+%    \includegraphics[width=0.48\textwidth]{images/frequenzpolitikgrafik.jpg}
+%  \end{center}
+%  \caption{Frequenzplan Deutschland Stand 2022 \cite{frequenznutzung}}
+%  \label{fig:frequenzplan}
+%\end{wrapfigure}
+%Der Mobilfunk in Deutschland nutzt verschiedene Frequenzbereiche, die sogenannten Funkbänder.
 
 \subsection{Modulation}
+Wenn Informationen in Form von Bits übertragen werden sollen, müssen diese zunächst zu Symbolen zusammengefasst werden. 
+Bei diesen Symbolen handelt es sich um diskrete Einheiten, die schlussendlich in Wellenformen codiert werden müssen. 
+Wenn mann von einer m-wertigen Modulation spricht, bedeutet dies, dass es insgesamt $m = 2^k$ Symbole mit k Bits pro Symbol gibt. \\
+Nun ist es so, dass bei den verschiedenen Mobilfunkgenerationen unterschiedliche Anforderungen an die Effizienz, die Fehleranfälligkeit und die Komplexität gestellt werden. 
+Deshalb ist es wichtig, die grundlegenen Modulationsverfahren zu kennen, die in der verschiedenen Mobilfunkgenerationen verwendet werden. 
+
+\subsubsection{Frequenzmodulation (FM)}
+Bei der Frequenzmodulation handelt es sich um ein analoges Modulationsverfahren. Hierbei wird die Frequenz der Trägerwelle im Verhältnis zur Amplitude $A_c$ des Informationssignals variiert.
+Mathematisch Beschrieben wird dies folgednermaßen:
+\begin{equation}
+  s(t) = A_c \cdot \cos(\omega_c \cdot t + \beta \cdot \sin(\omega_m \cdot t))
+\end{equation}
+Bei $\beta$ handelt es sich um den Modulationsindex, welcher die Abweichung der Frequenz vom Mittelwert beschreibt. 
+Besonders durch die Einfachheit und der im Vergleich zu anderen analogen Modulationsverfahren hohe Störfestigkeit ist die Frequenzmodulation für die Audioübertragung geeignet.\cite{frequenzmodulation}
+\subsubsection{Gaussian Minimum Shift Keying (GMSK)}
+
+\subsubsection{Phase Shift Keying (PSK)}
+
+\subsubsection{Quadrature Amplitude Modulation (QAM)}
 
 %\subsection{Zellularkonzept}
