@@ -11,7 +11,7 @@ da hier Informationen in Wellenformen codiert werden.
 %    \item \textbf{Zellularkonzept}: Struktur des Mobilfunknetzes zur effizienten Nutzung von Frequenzen. 
 %\end{itemize}
 
-\subsection{Fourier-Analyse und Spektrum}
+\subsection{Diskrete Fourier-Transformation und Spektrum}
 Um zunächst zu verstehen, warum die Fourier-Analyse beziehugnsweise die Fourier-Transformation und das dazugehörige Spektrum wichtig für die Signalübertragung ist, muss zunächst geklärt werden, was mit einem komplexen zeitdiskreten Signal gemeint ist.
 Bei einem komplexen Signal handelt es sich um ein Signal, welches sowohl einen Realteil als auch einen Imaginärteil besitzt:
 \begin{equation}
@@ -20,16 +20,12 @@ Bei einem komplexen Signal handelt es sich um ein Signal, welches sowohl einen R
 Hierbei bezeichnet der Realteil $\Re{s(t)} = I(t)$ den In-Phase-Anteil und der Imaginärteil $\Im{s(t)} = Q(t)$ den Quadratur-Anteil des Signals. 
 Wenn nun dieses Signal zeitdiskret ist, bedeutet dies, dass es nur zu konkreten Zeitpunkten definiert ist, also in der Regel, ein Signal, welches durch Abtastung eines kontinuierlichen Signals entsteht.\\
 Relevant für die Signalübertragung ist nun die Tatsache, dass komplexe zeitdiskrete Signale durch die Fourier-Transformation in ihre Frequenzanteile zerlegt werden können. Dadurch ist es möglich, die Modulation einfacher durchzuführen 
-und die Eigenschaften wie die Bandbreite und die Frequenznutzung zu analysieren.
-
-\subsubsection{Diskrete Fourier-Transformation (DFT)}
-Das Problem der kontinuierlichen Fourier-Transformation ist, dass diese in der Theorie sich auf einen unedlich langen Zeitraum bezieht. Da allerdings in der Realität bei der Signalübertragung keine unedlichen Signale existieren,
-muss eine diskrete Variante der Fourier-Transformation definiert werden:
+und die Eigenschaften wie die Bandbreite und die Frequenznutzung zu analysieren:
 \begin{equation}
     S[k] = \sum_{n=0}^{N-1} s[n] \cdot e^{-j \frac{2 \pi}{N} k n} \quad \text{für } k = 0, 1, \ldots, N-1   
 \end{equation}
 
-\subsubsection{Beispiel: Diskrete Fourier-Transformation eines Cosinuses}
+\subsection{Beispiel: Diskrete Fourier-Transformation eines Cosinuses}
 Um das abstrakte Konzept der Diskreten Fourier-Transformation besser zu verstehen, wird im folgenden ein einfaches grafisches Beispiel gezeigt.
 Anhand einer Cosinusfunktion mit einer Frequenz von 10kHz ist der nutzen der DFT zur Analyse der Frequenzanteile dargestellt:
 \begin{equation}
@@ -70,9 +66,29 @@ Mathematisch Beschrieben wird dies folgednermaßen:
 \end{equation}
 Bei $\beta$ handelt es sich um den Modulationsindex, welcher die Abweichung der Frequenz vom Mittelwert beschreibt. 
 Besonders durch die Einfachheit und der im Vergleich zu anderen analogen Modulationsverfahren hohe Störfestigkeit ist die Frequenzmodulation für die Audioübertragung geeignet.\cite{frequenzmodulation}
-\subsubsection{Gaussian Minimum Shift Keying (GMSK)}
+
+\subsubsection{Gaussian Minimum Shift Keying (GMSK) \cite{dig_nue}}
+Das Gaussian Minimum Shift Keying (kurz GMSK) ist ein Sonderfall des Frequency-Shift Keying (kurz FSK), genauer gesagt eine 2-FSK. Die Symbole werden hier durch zwei verschiedene Vektoren im Konstellationsdiagramm dargestellt.
+Zu beachten ist, dass die beiden Vektoren orthogonal, als in einem rechten Winkel zueinander stehen müssen:
+\begin{enumerate}
+  \item Symbol 0: $s_1 = A \cdot \cos(2 \pi \cdot f_1 \cdot t)$
+  \item Symbol 1: $s_2 = A \cdot \cos(2 \pi \cdot f_2 \cdot t)$
+\end{enumerate}
+Der Linienabstand $\Delta f$ zwischen den beiden Frequenzen $f_1$ und $f_2$ ist so gewählt, dass der kleinste Modulationsabstand $\eta$ für die orthogonalität erreicht wird:
+\begin{equation}
+  \eta = \frac{\Delta f}{f_s}
+\end{equation}
+Für dem Fall der GMSK-Modulation in der Modulationsabstand $\eta = \frac{1}{2}$. Verwendung findet GSMK hauptsächlich bei robusten Verfahren mit einer kleinen Symbolrate $f_s$ ($< 10kBaud$).
 
 \subsubsection{Phase Shift Keying (PSK)}
+\begin{wrapfigure}{h!}{0.5\textwidth}
+  \begin{center}
+    \includegraphics[width=0.48\textwidth]{images/Konstellationsdiagramm_4psk.png}
+  \end{center}
+  \caption{Beispiel einer QPSK-Konstellation}
+  \label{fig:psk_konstellation}
+\end{wrapfigure}
+Um das Prinzip der Phasenmodulation zu erklären, wind im Folgenden das Beispiel einer QPSK-Modulation betrachtet.
 
 \subsubsection{Quadrature Amplitude Modulation (QAM)}
 
