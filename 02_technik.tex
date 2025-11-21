@@ -81,15 +81,34 @@ Der Linienabstand $\Delta f$ zwischen den beiden Frequenzen $f_1$ und $f_2$ ist 
 Für dem Fall der GMSK-Modulation in der Modulationsabstand $\eta = \frac{1}{2}$. Verwendung findet GSMK hauptsächlich bei robusten Verfahren mit einer kleinen Symbolrate $f_s$ ($< 10kBaud$).
 
 \subsubsection{Phase Shift Keying (PSK)}
-\begin{wrapfigure}{h!}{0.5\textwidth}
+\begin{wrapfigure}{h!}{0.4\textwidth}
   \begin{center}
     \includegraphics[width=0.48\textwidth]{images/Konstellationsdiagramm_4psk.png}
   \end{center}
   \caption{Beispiel einer QPSK-Konstellation}
   \label{fig:psk_konstellation}
 \end{wrapfigure}
-Um das Prinzip der Phasenmodulation zu erklären, wind im Folgenden das Beispiel einer QPSK-Modulation betrachtet.
+Um das Prinzip der Phasenmodulation zu erklären, wind im Folgenden das Beispiel einer QPSK-Modulation betrachtet. Bei dieser Moudlation werden 4 Symbole mit jeweils 2 Bits pro Symbol codiert.
+Allgemein gilt, dass bei einer M-PSK $M = 2^k$ Symbole mit jeweils k Bits pro Symbol codiert werden, mit jeweils $2^k$ unterschiedlichen Wellenformen:
+\begin{equation}
+  s_m(t) = A \cdot \cos(2 \cdot \pi \cdot f_0 \cdot t + \frac{2 \cdot \pi}{M} \cdot m)
+\end{equation} \\
+Der Vorteil an einer komplexwertigen Amplitudenmodulation wie der PSK ist, dass die inforamtion in den Koeffizienten der Linearkombination der Basisfunktionen codiert wird. Durch eine zusätzliche Zuordnung der Bits im Gray-Code 
+(nur ein Bit ändert sich pro Symbolwechsel) kann die Bitfehlerwahrscheinlichkeit weiter reduziert werden, wobei die Symbolfehlerwahrscheinlichkeit konstant bleibt. 
 
 \subsubsection{Quadrature Amplitude Modulation (QAM)}
-
-%\subsection{Zellularkonzept}
+\begin{wrapfigure}{r}{0.4\textwidth}
+  \centering
+  \includegraphics[width=0.38\textwidth]{images/16_qam.png}
+  \caption{Beispiel einer 16-QAM\cite{dig_nue}}
+  \label{fig:qam_konstellation}
+\end{wrapfigure}
+Gerade bei neueren Mobilfunkstandards wie LTE und 5G ist die Quadrature Amplituden Moduation (QAM) weit verbreitet. Als Beispiel verwendet LTE eine 256-QAM Modulation, was bedeutet, dass 256 Symbole mit jeweils 8 Bit codiert werden. 
+Dies grafisch darzustellen ist aufgrund der hohen Symbolanzahl schwierig, weshalb in Abbildung~\ref{fig:qam_konstellation} als Beispiel ein 16-QAM Konstellationsdiagramm gezeigt wird. \\
+Mathematisch wird die QAM folgendermaßen beschrieben:
+\begin{equation}
+  s'_m(t) = I_m \cdot g(t) \ \text{mit} \ I_m = a_m + j \cdot b_m
+  \label{eq:qam_modulation}
+\end{equation}
+\noindent Durch Gleichung~\ref{eq:qam_modulation} wird beschrieben, dass jedes Symbol $s'_m(t)$ durch eine Linearkombination aus einer komplexen Amplitude $I_m$ und einer Pulsformung $g(t)$ bestimmt wird. Die Pulsformung bestimmt hierbei über die Bandbreiteneffizienz. In einer wie hier gezeigten rechteckigen Konstellation haben alle Symbole den gleichen Abstand d zueinander. Dadurch, dass der minimale Abstand zwischen den direkt benachbarten Symbolen maximiert wird, 
+ist die QAM effizient in der Bandbreitennutzung und gleichzeitig auch bei der Fehleranfälligkeit robust~\cite{wiley}. 

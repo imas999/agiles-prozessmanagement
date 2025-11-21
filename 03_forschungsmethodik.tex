@@ -1,13 +1,37 @@
 \section{Generationsüberblick}
 
-\subsection{1G --- Analogfunk}
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{c|c|c|c|c}
+        \textbf{Generation} & \textbf{Jahr} & \textbf{Datenrate} & \textbf{Modulation} & \textbf{Frequenzband} \\
+        \hline
+        1G & ab 1978 & --- & --- & kein Spezielles \\
+        \hline
+        2G (GSM) & ab 1990 & max. 9,6 kbit/s & GMSK & 900 MHz, 1800 MHz \\
+        \hline
+        3G (UMTS) & ab 2003 & 384 kbit/s & QPSK & 1920--2170 MHz \\
+        \hline
+        4G (LTE) & ab 2012 & 300 MBit/s & 64-QAM & 700--2700MHz \\
+        \hline 
+        5G & ab 2019 & 10 GBit/s & 256-QAM &  700MHz, 3.5GHz, 24GHz \\
+    \end{tabular}
+    \caption{Übersicht Technische Daten der Mobilfunkgenerationen \cite{uebersicht}}
+    \label{tab:generationen}
+\end{table}
 
-\subsection{2G --- Digitale Sprachübertragung}
+\noindent Um eine schnelle Übersicht über die verschiedenen Mobilfunkgenerationen zu erhaltem, ist in Tabelle \ref{tab:generationen} zunächst eine kurze Zusammenasssung der wichtigsten technischen Kenngrößen dargestellt.
+Ergänzend zu Tabelle \ref{tab:generationen} ist zu erwähnen, dass die verschiedenen Mobilfunkgenerationen unterschiedliche Aufgabenbereiche abdecken. Die erste Generation ist hierbei die ersten Anläufe der Telefonie über analgoe Kabelnetze.
+Darauf aufbauen mit dem Global System for Mobile Communications (GSM) Standard wurde die Übertragung von SMS und einfache mobile Kommunikation eröglicht. Mit dem UMTS Standard der dritten Generation wurde die mobile Datenübertragung, als das mobile Internet eingeführt.
+Durch den im Jahr 2012 beschlossenen \glqq Long Term Evolution\grqq (LTE) Sandard kam nun ein verbesserte Datenrate, flächendeckenden guten Empfang mit eienr deutlich geringeren Latenszeit hinzu. Aufgrund der hohen Nachfrage und der immer digtaler 
+Ausgelegten Gesellschaft wurde 2016 der neue 5G Standard eingeführt. Hierbei wird vor allen die Datenrate drastisch erhöht, mit bis zu dem zehnfachen des LTE Standards. Ein Interessanter Aspekt bei der Betrachtung der verschiedenen Mobilfunkgenerationen ist deren Lbenesdauer.
+\begin{wrapfigure}{r}{0.4\textwidth}
+  \centering
+  \includegraphics[width=0.38\textwidth]{images/lebenszyklen.png}
+  \caption{Lebenszyklen \cite{uebersicht}}
+  \label{fig:lebenszyklen}
+\end{wrapfigure} 
+Die verschiedenen Lebenszyklen sind in Abbildung \ref{fig:lebenszyklen} visuell dargestellt. Zu beachten ist, das sich der GSM Standard viel länger gehalten hat, als sein eigentlicher Nachfolger UMTS. Zudem erwähnenswert ist, dass immer eine gewisse Zeitliche überlappung
+der einelnen Generationen besteht, da die Infrastruktur und die Geräte nicht sofort auf den neusten Stand gebracht werden können.
 
-\subsection{3G --- Mobile Datenübertragung}
-
-\subsection{4G --- Breitbandmobilfunk}
-
-\subsection{5G --- Vernetzung und IoT}
 
 \section{Forschung --- Zukunftsausblick}
