@@ -31,7 +31,40 @@ Ausgelegten Gesellschaft wurde 2016 der neue 5G Standard eingeführt. Hierbei wi
   \label{fig:lebenszyklen}
 \end{wrapfigure} 
 Die verschiedenen Lebenszyklen sind in Abbildung \ref{fig:lebenszyklen} visuell dargestellt. Zu beachten ist, das sich der GSM Standard viel länger gehalten hat, als sein eigentlicher Nachfolger UMTS. Zudem erwähnenswert ist, dass immer eine gewisse Zeitliche überlappung
-der einelnen Generationen besteht, da die Infrastruktur und die Geräte nicht sofort auf den neusten Stand gebracht werden können.
+der einelnen Generationen besteht, da die Infrastruktur und die Geräte nicht sofort auf den neusten Stand gebracht werden können. \\
+Eng mit den Lebenszyklen verknüpft, ist die Verfügbarkeit und die Erschwinglichkeit für die Breite Masse. Grade zu Beginn der Telefonie war dies nur den wohlhabenderen Einwohner vorbehalten, mit Preisen bis zu 15.000 DM. Ihren Höhepunkt errreicht die analoge Telefonie mit der Einführung
+des C-Netzes und einem Höchststand von 800.000 Nutzern \cite{fg_funk}. Mit der Einführung des ersten digitalen Mobilfunkstandards GSM, wurde der wohl prägenste Schritt in der Mobilenkommunikation getroffen, welcher sich bis heute noch aktiv genutzt wird.
+Mit über 76 Millionen Nutzern in Deutschland (Stand Ende 2005 \cite{fg_funk}), wurde hiermit erstmals die Breite Masse der Bevölkerung abgedeckt.
+Auch wenn der neue UMTS Standard eine deutlich bessere Datenrate im vergleich zu GSM bot, konnte sich dieser nicht durchsetzen. Der UMTS Standard wurde bereits im Jahr 2021 abgestellt, währenddessen der GSM Standard weiterhin für die flächendeckende Grundversorgung in Detuschland zuständig ist. 
+Gründe dafür sind zum einen der Frequenzbedarf. Die Frequenzen die UMTS nutzte werden momentan für die Ausbau des 4G und 5G Netzes gebraucht. Zum anderen ist die die Flächendeckung durch GSM bereits gegeben und auch Systeme wie das Notrufsystem beruht noch auf GSM.
+Wie auch schon in der Einführung erwähnt, ist der Ausbau des 4G und 5G Standards in Deutschland eher schleppend. Nach einem Ranking von der Strategie- und Innovationsberatung Arthur D. Litte aus dem Jahr 2019 \glqq liegt Deutschland zwischen Lettland und Norwegen auf dem 18. von 43 Plätzen\grqq \cite{falck_5g}.
+Als mögliche Gründe dafür, kann mit unter zwar auch die Politk und die Netzbetreiber aufgeführt werden, allerdings ist es grade in Deutschland durch das gegebene Terain und die weniger geballten bewohnten Flächen eine Herausforderung, flächendeckend und den größtmöglichen Teil der Bevölkerung abzudecken. \\
+Um noch einmal auf die Überischt aus Tabelle \ref{tab:generationen} zurückzukommen, ist es offensichtlich in einem Generationenvergleich auch auf die für den Endnutzer am wichtigste Kenngröße, die Datenrate zu schauen. Hierbei ist allerdings auch den Verwendungszweck und die Zeitepoche zu berücksichtigen.
+In einer Zeit, in der Streamingdinste und digtiale Kommunikation immer relevater sind, ist eine höhere Datenrate nötig im Vergleich zu den Beginn des GSM Standards, in welcher lediglich einfache SMS verschickt werden sollten. Dennoch sind die Sprünge, gerade der von UMTS auf LTE und der von LTE auf 5G mit bis zu der 10fachen Datenrate possitiv Hervorzuheben. \\
+Als letzter Vergleichspunkt wird die genutzte Modulationsart im Bezug auf deren Signal-zu-Rausch-Verhältnis (SNR) für eine bestimmte Bitfehlerrate (BER) betrachtet. 
+\begin{table}[h!]
+  \centering 
+  \begin{tabular}{c|c|c}
+    \textbf{Modulation} & \textbf{SNR für BER = $10^{-6}$} & \textbf{Referenz} \\
+    \hline
+    GMSK & 8 - 9dB (für BER = $10^{-3}$ ) & \cite{singh_modulation} \\
+    \hline
+    QPSK & 9.5 - 10dB & \cite{masud_ber} \\
+    \hline
+    64-QAM & 18 - 22dB & \cite{singh_modulation} \\
+    \hline
+    256-QAM & 25 - 30dB & \cite{singh_modulation} \\ 
+  \end{tabular}
+  \label{tab:mod_snr_ber}
+  \caption{Übersicht SNR für verschiedene Moudlationsarten bei BER = $10^{-6}$}
+\end{table}
+\noindent Hierbei beschreibt das SNR das Verhältnis zwischen Signalleistung und Rauschleistung. Einfach ausgedrückt, je höher das SNR, desto besser ist die Signalqualität.
+Die hier Refferierte Bitfehlerrate (BER) ist ein Maß, wie viele Bits falsch sind, im Verhältnis zu den gesamt gesendeten Bits. Hier gilt, je kleiner das BER, desto besser die Singalqualität. 
+Tabelle \ref{tab:mod_snr_ber} zeigt deutlich, den zusammenhang zwischen der Anzahl der verfügbaren Bits und der notwendigkeit für robustheit gegenüber Störungen wie Rauschen. 
+Daraus abzuleiten ist ebenfalls, dass die Technik hinter den Sendern und Empfänger immer besser und robuster werden muss um die immer Höheren Datenraten zu unterstützen.
 
+\section{Forschung - Zukunftsausblick}
+Natürlich wird momentan von vielen verschiedenen Instituten an neunen 6G Standards geforscht. Speziellern Fokus liegt hierbei vorallem auf den europäischen Zielsetzugen, beschrieben im Whitepaper \glqq European vision for the 6G network ecosystem\grqq \cite{6GIA2024}.
+Als die wichtigsten Punkte, neben dem immer existenten Ziel der Nachhaltigkeit, ist vorallem eine schneller Latenzzeit (von $<1ms$) und eine perfekte Flächenabdeckung, durch eine kombination aus Basissationen und Satelliten. Zusätzlich sollen Peak-Datenraten von bis zu 1TBis/s, durch Nutzung von Frequenzen im Terraherzbereich, ermöglicht werden.
+Gerade im Automobilbereich und der Industrie werden Themen wie \textbf{Edge-Computing} und \textbf{Zero-Trust-KI-Architekturen}, die massiv von den Vorteilen der 6G Standards profitieren, einen großen Einfluss auf die geplanten Standards haben.
 
-\section{Forschung --- Zukunftsausblick}

@@ -1,5 +1,11 @@
-# Output directory for all build files
-$out_dir = 'build';
+# Auxiliary directory for build files (not PDF)
+$aux_dir = 'build';
+
+# PDF stays in main directory
+$out_dir = '.';
+
+# Ensure the build directory exists
+system("mkdir -p build");
 
 # Ensure PDF is generated
 $pdf_mode = 1;
